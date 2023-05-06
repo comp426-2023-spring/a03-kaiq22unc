@@ -15,9 +15,18 @@ if (argv.r || argv.rules) {
   process.exit();
 }
 
-const shot = argv._[0] || 'rock';
+const shot = argv._[0];
+	if (!shot) {
+		const result = { "player": "rock" };
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
 if (shot) {
-  rpsls(shot.toLowerCase());
+  const result = rpsls(shot.toLowerCase());
+  	if (!(typeof result == "undefined")) {
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
 } else {
   console.error('Error: Missing required argument SHOT.');
   helpRPSLS();
