@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 
 // Your CLI code here
-import minimist from 'minimist';
-import { rpsls, rulesRPSLS, helpRPSLS } from '../lib/rpsls.js';
-
+const minimist = require('minimist');
+const { rpsls, rulesRPSLS, helpRPSLS } = require('../lib/rpsls');
 const argv = minimist(process.argv.slice(2));
 
 if (argv.h || argv.help) {
