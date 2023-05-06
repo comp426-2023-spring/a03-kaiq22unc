@@ -15,7 +15,7 @@ if (argv.r || argv.rules) {
   process.exit();
 }
 
-const shot = argv._[0] || '';
+const shot = argv._[0] || 'rock';
 if (shot) {
   rps(shot.toLowerCase());
 } else {
