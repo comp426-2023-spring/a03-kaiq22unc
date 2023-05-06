@@ -17,7 +17,11 @@ if (argv.r || argv.rules) {
 
 const shot = argv._[0] || 'rock';
 if (shot) {
-  rps(shot.toLowerCase());
+  const result =  rps(shot.toLowerCase());
+	if (!(typeof result == "undefined")) {
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
 } else {
   console.error('Error: Missing required argument SHOT.');
   helpRPS();
