@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 // Your CLI code here
-import minimist from 'minimist';
-import { rps, rulesRPS, helpRPS } from '../lib/rps.js';
+const minimist = require('minimist');
+const { rps, rulesRPS, helpRPS} = require('../lib/rps');
 const argv = minimist(process.argv.slice(2));
 
 if (argv.h || argv.help) {
