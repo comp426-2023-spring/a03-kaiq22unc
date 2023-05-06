@@ -15,7 +15,12 @@ if (argv.r || argv.rules) {
   process.exit();
 }
 
-const shot = argv._[0] || 'rock';
+const shot = argv._[0];
+	if (!shot) {
+		const result = { "player": "rock" };
+		console.log(JSON.stringify(result));
+		process.exit();
+	}
 if (shot) {
   const result =  rps(shot.toLowerCase());
 	if (!(typeof result == "undefined")) {
